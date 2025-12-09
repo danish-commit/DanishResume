@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family - Ahmad Danish Haikal</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Photo Gallery Styles */
+        .photo-gallery {
+            margin: 40px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            background: #1a1a1a;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%);
+        }
+
+        .gallery-caption h4 {
+            color: #a855f7;
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+        }
+
+        .gallery-caption p {
+            color: #b0b0b0;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* Modal/Lightbox Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: 0;
+            display: block;
+            max-width: 600px;
+            max-height: 70vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(168, 85, 247, 0.5);
+        }
+
+        .modal-caption {
+            text-align: center;
+            color: #b0b0b0;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 1001;
+        }
+
+        .close-modal:hover {
+            color: #a855f7;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .modal-content {
+                max-width: 90%;
+                max-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="header-content">
+            <div class="profile-header">
+    <a href="index.html" class="logo">
+        <img src="logo removed.png" alt="ADH Logo" style="height: 60px;">
+    </a>
+    <p><marquee>Multimedia Developer | Information Management</marquee></p>
+    <div id="live-clock"></div>
+            </div>
+            <nav>
+                <a href="index.html" class="nav-btn">Home</a>
+                <a href="skills.html" class="nav-btn">Skills</a>
+                <a href="experience.html" class="nav-btn">Experience</a>
+                <a href="projects.html" class="nav-btn">Projects</a>
+                <a href="education.html" class="nav-btn">Education</a>
+                <a href="family.html" class="nav-btn active">Family</a>
+                <a href="hobbies.html" class="nav-btn">Interests</a>
+                <a href="contact.html" class="nav-btn">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div id="family" class="section active">
+                <div class="personal-section">
+                    <h2>Family & Background 👨‍👩‍👧‍👦</h2>
+                    <p style="color: #b0b0b0; margin-bottom: 40px; font-size: 1.1em;">A look into my background and the people who support and inspire my journey to success.</p>
+                    
+                    <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%); padding: 30px; border-radius: 10px; border: 1px solid rgba(168, 85, 247, 0.3); margin-bottom: 30px;">
+                        <h3 style="color: #a855f7; margin-bottom: 15px;">💝 Family Support</h3>
+                        <p style="color: #b0b0b0; line-height: 1.6;">
+                            Behind every achievement is the unwavering support of family. My parents have been my pillars of strength, 
+                            encouraging me to pursue my dreams and providing guidance throughout my educational and professional journey.
+                        </p>
+                    </div>
+                    
+                    <table>
+                        <caption style="font-size: 1.3em;">Family Members</caption>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Relationship</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: bold;">1. Ahmad Jailani Bin Ahmad Jailani</td>
+                                <td>Father</td>
+                                <td>012-238 7320</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">2. Norliza Bt Abd Aziz</td>
+                                <td>Mother</td>
+                                <td>012-629 6563</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">3. Ahmad Danish Haikal Bin Ahmad Jailani</td>
+                                <td>Me</td>
+                                <td>013-247 4120</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">4. Ahmad Danial Iman Bin Ahmad Jailani</td>
+                                <td>Brother</td>
+                                <td>017-205 4061</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Photo Gallery Section -->
+                    <div class="photo-gallery">
+                        <h3 style="color: #a855f7; text-align: center; margin-bottom: 10px; font-size: 1.5em;">📸 Family Gallery</h3>
+                        <p style="color: #b0b0b0; text-align: center; margin-bottom: 30px;">Cherished moments with the people who matter most</p>
+                        
+                        <!-- Family Photo Section -->
+                        <div style="margin-bottom: 50px;">
+                            <h4 style="color: #dc2626; margin-bottom: 20px; font-size: 1.3em;">👨‍👩‍👧‍👦 Our Family</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openModal('family crop.jpg', 'Family Portrait', 'A beautiful moment captured with the whole family')">
+    
+    <img src="family crop.jpg" alt="Family Portrait" style="object-position: 50% 25%;">
+    
+    <div class="gallery-caption">
+        <h4>Family Portrait</h4>
+        <p>Together as one</p>
+    </div>
+</div>
+                            </div>
+                        </div>
+
+                        <!-- Father's Photos Section -->
+                        <div style="margin-bottom: 50px;">
+                            <h4 style="color: #dc2626; margin-bottom: 20px; font-size: 1.3em;">👨 Father - Ahmad Jailani Bin Ahmad Jailani</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openModal('papa badminton.jpg', 'Dad Photo 1', 'Quality time with dad')">
+                                    <img src="papa badminton.jpg" alt="Dad Photo 1">
+                                    <div class="gallery-caption">
+                                        <h4>&#127992</h4>
+                                        <p>Company's Tournament</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openModal('papa ride.jpg', 'Dad Photo 2', 'Adventures with dad')">
+                                    <img src="papa ride.jpg" alt="Dad Photo 2">
+                                    <div class="gallery-caption">
+                                        <h4>Father's Wisdom</h4>
+                                        <p>Work hard, Play hard</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openModal('papa jamming.png', 'Dad Photo 3', 'Memorable times with dad')">
+                                    <img src="papa jamming.png" alt="Dad Photo 3">
+                                    <div class="gallery-caption">
+                                        <h4>Role Model</h4>
+                                        <p>Music influencer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mother's Photos Section -->
+                        <div style="margin-bottom: 50px;">
+                            <h4 style="color: #dc2626; margin-bottom: 20px; font-size: 1.3em;">👩 Mother - Norliza Bt Abd Aziz</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openModal('ibu kinabalu.jpg', 'Mom Photo 1', 'A special moment with mom')">
+                                    <img src="ibu kinabalu.jpg" alt="Mom Photo 1">
+                                    <div class="gallery-caption">
+                                        <h4>Loving Mother</h4>
+                                        <p>Hiking with MRL Comittee</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openModal('ibu kinabalu top.jpg', 'Mom Photo 2', 'Another beautiful memory with mom')">
+                                    <img src="ibu kinabalu top.jpg" alt="Mom Photo 2">
+                                    <div class="gallery-caption">
+                                        <h4>Mom's Smile</h4>
+                                        <p>Gunung Kinabalu Summit (Sept,2024).</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openModal('ibu hiking.jpg', 'Mom Photo 3', 'Precious moments with mom')">
+                                    <img src="ibu hiking.jpg" alt="Mom Photo 3">
+                                    <div class="gallery-caption">
+                                        <h4>Special Moments</h4>
+                                        <p>Mother love to hike.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+ <!-- Danish's Photos Section -->
+                        <div style="margin-bottom: 50px;">
+                            <h4 style="color: #dc2626; margin-bottom: 20px; font-size: 1.3em;">👨 Me - Ahmad Danish Haikal Bin Ahmad Jailani</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openModal('danish acoustic.jpg', 'Dad Photo 1', 'Quality time with dad')">
+                                    <img src="danish acoustic.jpg" alt="Dad Photo 1">
+                                    <div class="gallery-caption">
+                                        <h4>Me</h4>
+                                        <p>&#127928</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openModal('danish diner.jpg', 'Dad Photo 2', 'Adventures with dad')">
+                                    <img src="danish diner.jpg" alt="Dad Photo 2">
+                                    <div class="gallery-caption">
+                                        <h4>&#128101</h4>
+                                        <p>&#9925</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="gallery-item" onclick="openModal('danish evo.png', 'Dad Photo 3', 'Memorable times with dad')">
+                                    <img src="danish evo.png" alt="Dad Photo 3">
+                                    <div class="gallery-caption">
+                                        <h4>&#128373</h4>
+                                        <p>&#128286</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brother's Photo Section -->
+                        <div style="margin-bottom: 50px;">
+                            <h4 style="color: #dc2626; margin-bottom: 20px; font-size: 1.3em;">👦 Brother - Ahmad Danial Iman Bin Ahmad Jailani</h4>
+                            <div class="gallery-grid">
+                                <div class="gallery-item" onclick="openModal('danial.jpg', 'Brother Photo', 'My brother and best friend')">
+                                    <img src="danial.jpg" alt="Brother Photo">
+                                    <div class="gallery-caption">
+                                        <h4>My Brother</h4>
+                                        <p>Partner in crime</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal for full-size images -->
+                    <div id="imageModal" class="modal" onclick="closeModal()">
+                        <span class="close-modal">&times;</span>
+                        <img class="modal-content" id="modalImage">
+                        <div class="modal-caption" id="modalCaption"></div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; padding: 25px; background: #1a1a1a; border-radius: 10px; border: 1px solid rgba(220, 38, 38, 0.2);">
+                        <h3 style="color: #dc2626; margin-bottom: 15px;">🏠 Home Base</h3>
+                        <p style="color: #b0b0b0; margin-bottom: 10px;"><strong>Location:</strong> Ampang, Selangor, Malaysia</p>
+                        <p style="color: #b0b0b0; line-height: 1.6;">
+                            Born in Kuala Lumpur and growing up in Ampang has shaped my perspective and values. The diverse community and vibrant culture 
+                            have taught me the importance of adaptability, respect, and continuous growth.
+                        </p>
+                    </div>
+
+                    <!-- Values Section -->
+                    <div style="margin-top: 40px;">
+                        <h3 style="color: #a855f7; text-align: center; margin-bottom: 30px; font-size: 1.5em;">Core Family Values</h3>
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <h3 style="text-align: center; font-size: 2em; margin-bottom: 10px;">🎓</h3>
+                                <h3 style="color: #dc2626;">Education First</h3>
+                                <p>Prioritizing knowledge and continuous learning as the foundation for success.</p>
+                            </div>
+                            <div class="info-card">
+                                <h3 style="text-align: center; font-size: 2em; margin-bottom: 10px;">💪</h3>
+                                <h3 style="color: #dc2626;">Hard Work</h3>
+                                <p>Believing that dedication and perseverance lead to achievement.</p>
+                            </div>
+                            <div class="info-card">
+                                <h3 style="text-align: center; font-size: 2em; margin-bottom: 10px;">🤝</h3>
+                                <h3 style="color: #dc2626;">Respect & Integrity</h3>
+                                <p>Maintaining high moral standards and treating everyone with dignity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Ahmad Danish Haikal Bin Ahmad Jailani | Professional Portfolio</p>
+            <p style="margin-top: 5px; font-size: 0.85em;">Designed with passion | IMD318</p>
+            <p style="margin-top: 10px; font-size: 0.8em; color: #666;">
+                <a href="contact.html" style="color: #a855f7; text-decoration: none; margin: 0 10px;">Contact</a> | 
+                <a href="mailto:danishkal17@gmail.com" style="color: #a855f7; text-decoration: none; margin: 0 10px;">Email</a> | 
+                <a href="https://www.instagram.com/danvsh._" target="_blank" style="color: #a855f7; text-decoration: none; margin: 0 10px;">Instagram</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Clock function
+        function updateClock() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeString = now.toLocaleTimeString('en-US', timeOptions);
+            const dateOptions = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', dateOptions);
+            const clockElement = document.getElementById('live-clock');
+            if (clockElement) {
+                clockElement.textContent = `📅 ${dateString} | ⏳ ${timeString}`;
+            }
+        }
+        
+        // Modal/Lightbox functions
+        function openModal(imgSrc, title, description) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = imgSrc;
+            caption.innerHTML = `<strong>${title}</strong><br>${description}`;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateClock(); 
+            setInterval(updateClock, 1000);
+        });
+    </script>
+</body>
+</html>

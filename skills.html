@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Ahmad Danish Haikal</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Full Navigation Header (Synced with index.html) -->
+    <header>
+        <div class="header-content">
+            <div class="profile-header">
+    <a href="index.html" class="logo">
+        <img src="logo removed.png" alt="ADH Logo" style="height: 60px;">
+    </a>
+    <p><marquee>Multimedia Developer | Information Management</marquee></p>
+    <div id="live-clock"></div>
+            </div>
+            <nav>
+                <a href="index.html" class="nav-btn">Home</a>
+                <a href="skills.html" class="nav-btn active">Skills</a>
+                <a href="experience.html" class="nav-btn">Experience</a>
+                <a href="projects.html" class="nav-btn">Projects</a>
+                <a href="education.html" class="nav-btn">Education</a>
+                <a href="family.html" class="nav-btn">Family</a>
+                <a href="hobbies.html" class="nav-btn">Interests</a>
+                <a href="contact.html" class="nav-btn">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div id="skills" class="section active">
+                <h2>Skills & Competencies</h2>
+                <p style="color: #b0b0b0; margin-bottom: 40px; font-size: 1.1em;">A comprehensive overview of my technical abilities, soft skills, and language proficiency.</p>
+                
+                <h3 style="color: #a855f7; margin: 20px 0;">💻 Technical & Design Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">Multimedia Developer</div>
+                    <div class="skill-item">Canva Literacy (Design & Editing)</div>
+                    <div class="skill-item">HTML & Website Development</div>
+                    <div class="skill-item">C++ Programming (Diploma Level)</div>
+                    <div class="skill-item">SQL Database Management</div>
+                    <div class="skill-item">Microsoft Office (Excel, PPT, Word)</div>
+                    <div class="skill-item">Diploma Level Records Management</div>
+                </div>
+                
+                <h3 style="color: #a855f7; margin: 30px 0 20px 0;">🤝 Soft Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">Strong Communication & Networking</div>
+                    <div class="skill-item">Time Management & Efficiency</div>
+                    <div class="skill-item">Teamwork & Leadership</div>
+                    <div class="skill-item">Problem Solving & Critical Thinking</div>
+                    <div class="skill-item">Adaptability & Fast Learning</div>
+                </div>
+                
+                <h3 style="color: #a855f7; margin: 30px 0 20px 0;">🌍 Language Proficiency</h3>
+                <div class="language-bar">
+                    <h4>Malay (Bahasa Malaysia)</h4>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 100%">Native/Fluent</div></div>
+                </div>
+                <div class="language-bar">
+                    <h4>English</h4>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%">Fluent/Professional</div></div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div style="margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 100%); border-radius: 10px; border: 1px solid rgba(168, 85, 247, 0.3); text-align: center;">
+                    <h3 style="color: #a855f7; margin-bottom: 15px;">Interested in Working Together?</h3>
+                    <p style="color: #b0b0b0; margin-bottom: 20px;">Let's connect and discuss how I can contribute to your team or project.</p>
+                    <a href="contact.html" class="btn-primary" style="display: inline-block;">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Ahmad Danish Haikal Bin Ahmad Jailani | Professional Portfolio</p>
+            <p style="margin-top: 5px; font-size: 0.85em;">Designed with passion | IMD318</p>
+            <p style="margin-top: 10px; font-size: 0.8em; color: #666;">
+                <a href="contact.html" style="color: #a855f7; text-decoration: none; margin: 0 10px;">Contact</a> | 
+                <a href="mailto:danishkal17@gmail.com" style="color: #a855f7; text-decoration: none; margin: 0 10px;">Email</a> | 
+                <a href="https://www.instagram.com/danvsh._" target="_blank" style="color: #a855f7; text-decoration: none; margin: 0 10px;">Instagram</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeString = now.toLocaleTimeString('en-US', timeOptions);
+            const dateOptions = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', dateOptions);
+            const clockElement = document.getElementById('live-clock');
+            if (clockElement) {
+                clockElement.textContent = `📅 ${dateString} | ⏳ ${timeString}`;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            updateClock(); 
+            setInterval(updateClock, 1000);
+        });
+    </script>
+</body>
+</html>
